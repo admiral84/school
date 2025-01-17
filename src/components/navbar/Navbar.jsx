@@ -32,7 +32,7 @@ function Navbar() {
         <ul className="hidden lg:flex">
           {navItems.map((item) => (
             <Link href={item.target} key={item.id}>
-              <li className="p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black">
+              <li className="p-4 hover:bg-main rounded-xl m-2 cursor-pointer duration-300 hover:text-black">
                 {item.text}
               </li>
             </Link>
@@ -57,8 +57,8 @@ function Navbar() {
 
           {/* Mobile Navigation Items */}
           {navItems.map((item) => (
-            <Link href={item.target} key={item.id}>
-              <li className="p-4 border-b rounded-xl hover:secondary duration-300 hover:text-black cursor-pointer border-gray-600">
+            <Link href={item.target} key={item.id} prefetch={false}>
+              <li className="p-4 border-b rounded-xl hover:bg-secondary duration-300 hover:text-black cursor-pointer border-gray-600">
                 {item.text}
               </li>
             </Link>
@@ -66,12 +66,12 @@ function Navbar() {
         </ul>
       </div>
       <div className="space-x-4 flex-row hidden lg:block">
-        <Link href="/auth/register">
+        <Link href="/auth/register" prefetch={false}>
           <button className="bg-white-700 text-heading font-bold px-6 rounded-sm h-10 border-2 border-secondary">
             s'incrire
           </button>
         </Link>
-        <Link href="/auth/login">
+        <Link href="/auth/login" prefetch={false}>
           <button className="bg-white-700 text-heading font-bold px-6 rounded-sm h-10 border-2 border-secondary">
             se connecter
           </button>

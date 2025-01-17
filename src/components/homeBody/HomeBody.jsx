@@ -5,7 +5,7 @@ function HomeBody() {
   return (
     <div className="py-20 px-2 flex justify-between bg-gray-200">
       <div className="mr-9 w-5/6">
-        <span className="text-black font-bold text-5xl text-wrap">
+        <span className="text-black font-bold text-3xl text-wrap my-10">
           Evitez les obstacles et commencez a apprendre de n'import ou
         </span>
         <p className="text-black text-wrap">

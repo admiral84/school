@@ -52,6 +52,34 @@ function Page() {
             className="w-full h-12 px-4 border border-main rounded focus:outline-none focus:ring-2 focus:ring-main-500"
           />
         </div>
+        <div className="mb-4">
+          <label
+            htmlFor="motdepasse"
+            className="block text-sm font-semibold text-gray-600"
+          >
+            Mot de passe
+          </label>
+          <input
+            type="password"
+            id="motdepasse"
+            placeholder="Entrez votre mot de passe"
+            className="w-full h-12 px-4 border border-main rounded focus:outline-none focus:ring-2 focus:ring-main-500"
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="retapermotdepasse"
+            className="block text-sm font-semibold text-gray-600"
+          >
+            Retaper mot de passe
+          </label>
+          <input
+            type="password"
+            id="retapermotdepasse"
+            placeholder="Retapez votre mot de passe"
+            className="w-full h-12 px-4 border border-main rounded focus:outline-none focus:ring-2 focus:ring-main-500"
+          />
+        </div>
 
         <div className="mb-4">
           <label
@@ -85,6 +113,8 @@ function Page() {
             type="number"
             id="numero"
             placeholder="Entrez votre numéro"
+            min="1"
+            max="50"
             className="w-full h-12 px-4 border border-main rounded focus:outline-none focus:ring-2 focus:ring-main-500"
           />
         </div>
