@@ -2,7 +2,6 @@ import React from "react";
 import { getUser } from "@/lib/data";
 
 async function PostUser({ _id }) {
-  // const { _id } = params;
   const user = await getUser(_id);
   if (!user) {
     return (

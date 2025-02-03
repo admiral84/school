@@ -3,7 +3,7 @@ import { connectToDB } from "@/lib/utils";
 import { NextResponse } from "next/server";
 
 export const GET = async (request, { params }) => {
-  const { slug } = params;
+  const { slug } = await params;
   try {
     connectToDB();
     const post = await Post.findOne({ slug });

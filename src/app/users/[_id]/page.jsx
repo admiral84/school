@@ -1,18 +1,5 @@
 import React from "react";
 import { getUser } from "@/lib/data";
-// Fetch user data by ID
-// const getUser = async (_id) => {
-//   try {
-//     const res = await fetch(`http://localhost:3000/api/users/${_id}`);
-//     if (!res.ok) {
-//       throw new Error("Failed to fetch user details");
-//     }
-//     return res.json();
-//   } catch (err) {
-//     console.error(err);
-//     throw new Error("Something went wrong while fetching user details");
-//   }
-// };
 
 async function Page({ params }) {
   const { _id } = params;

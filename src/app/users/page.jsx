@@ -1,18 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
-const getUsers = async () => {
-  try {
-    const res = await fetch("http://localhost:3000/api/users");
-    if (!res.ok) {
-      throw new Error("Something went wrong");
-    }
-    return res.json();
-  } catch (err) {
-    console.log(err);
-    throw new Error("Something went wrong while fetching users");
-  }
-};
+import { getUsers } from "@/lib/data";
 
 async function page() {
   const users = await getUsers();

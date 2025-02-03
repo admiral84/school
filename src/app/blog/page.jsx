@@ -1,3 +1,4 @@
+import { addPost } from "@/lib/action";
 import { getBlogs } from "@/lib/data";
 import Link from "next/link";
 import React from "react";
@@ -13,10 +14,6 @@ async function Page() {
           key={post._id}
         >
           <Link href={`/blog/${post.slug}`}>
-            {/* <div className="flex gap-2 mb-2">
-              <h2 className="font-semibold">User ID:</h2>
-              <span>{post.author}</span>
-            </div> */}
             <div className="flex gap-2 mb-2">
               <h2 className="font-semibold">Title:</h2>
               <span>{post.title}</span>
@@ -26,13 +23,21 @@ async function Page() {
               <h2 className="font-semibold">Body:</h2>
               <span>{post.content}</span>
             </div>
-            <div>
-              <span>auteur</span>
-              <span></span>
-            </div>
           </Link>
         </article>
       ))}
+      <div>
+        <form action={addPost}>
+          <input type="text" placeholder="author" name="author" />
+          <input type="text" placeholder="title" name="title" />
+          {/* <input type="text" placeholder="slug" name="slug" /> */}
+          <textarea
+            placeholder="enter your content here"
+            name="content"
+          ></textarea>
+          <button type="submit">envoyer</button>
+        </form>
+      </div>
     </div>
   );
 }

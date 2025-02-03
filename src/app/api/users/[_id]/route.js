@@ -8,10 +8,10 @@ export const GET = async (request, { params }) => {
     connectToDB();
 
     // Extract the id from the params
-    const { id } = params;
+    const { _id } = await params;
 
     // Fetch the user by ID
-    const user = await User.findById(id);
+    const user = await User.findById(_id);
 
     // Check if the user exists
     if (!user) {

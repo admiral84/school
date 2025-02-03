@@ -1,23 +1,11 @@
 import PostUser from "@/components/postUser/PostUser";
+import { getBlog } from "@/lib/data";
 import Link from "next/link";
 import React from "react";
 
-const getData = async (slug) => {
-  try {
-    const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
-    if (!res.ok) {
-      throw new Error("Something went wrong");
-    }
-    return res.json();
-  } catch (error) {
-    console.error(error);
-    return null; // Graceful error handling
-  }
-};
-
 async function page({ params }) {
   const { slug } = await params; // Destructure `slug` from params
-  const post = await getData(slug);
+  const post = await getBlog(slug);
 
   if (!post) {
     return (
